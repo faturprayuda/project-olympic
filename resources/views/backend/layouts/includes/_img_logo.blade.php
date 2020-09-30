@@ -1,0 +1,1 @@
+<img src="{{asset('storage/img/logo/Logo-Universitas-Trilogi-color.png')}}" class="img-logo">

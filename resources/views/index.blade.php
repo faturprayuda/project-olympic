@@ -7,12 +7,6 @@
     <div class="container text-center">
       <div class="position-middle">
         <h1 class="display-4 font-weight-bold">Design Conference 2018</h1>
-        <a class="button button-xl button-radius button-fill-left-outline-white margin-top-30 scrolldown"
-          href="#about">Learn more</a>
-      </div>
-      <!-- scrolldown button -->
-      <div class="position-bottom icon-xl">
-        <a class="scrolldown" href="#about"><i class="ti-arrow-down"></i></a>
       </div>
     </div><!-- end container -->
   </div>
@@ -305,83 +299,6 @@
   </div><!-- end container -->
 </div>
 <!-- end Clients section -->
-
-<!-- Prices section -->
-<div class="section">
-  <div class="container">
-    <div class="section-title text-center">
-      <h2>Pricing Table</h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Integer tincidunt.</p>
-    </div>
-    <div class="row">
-      <!-- Prices box 1 -->
-      <div class="col-12 col-md-4">
-        <div class="prices-box">
-          <h6 class="heading-uppercase">Student</h6>
-          <div class="price">
-            <h1 class="font-weight-normal">19</h1>
-          </div>
-          <div class="price-features">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-          </div>
-          <a class="button button-md button-dark button-rounded" href="#">Order Now</a>
-        </div>
-      </div>
-      <!-- Prices box 2 -->
-      <div class="col-12 col-md-4">
-        <div class="prices-box prices-box-recommended">
-          <h6 class="heading-uppercase">Regular</h6>
-          <div class="price">
-            <h1 class="font-weight-normal">49</h1>
-          </div>
-          <div class="price-features">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-          </div>
-          <a class="button button-md button-dark button-rounded" href="#">Order Now</a>
-        </div>
-      </div>
-      <!-- Prices box 3 -->
-      <div class="col-12 col-md-4">
-        <div class="prices-box">
-          <h6 class="heading-uppercase">Premium</h6>
-          <div class="price">
-            <h1 class="font-weight-normal">79</h1>
-          </div>
-          <div class="price-features">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-          </div>
-          <a class="button button-md button-dark button-rounded" href="#">Order Now</a>
-        </div>
-      </div>
-    </div><!-- end row -->
-  </div><!-- end container -->
-</div>
-<!-- end Prices section -->
-
-<!-- Contact section -->
-<div class="section border-top">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-12 col-md-4 icon-3xl">
-        <i class="ti-mobile text-dark"></i>
-        <h6 class="font-weight-normal margin-top-20">Phone</h6>
-        <p>+(987) 654 321 01</p>
-      </div>
-      <div class="col-12 col-md-4 icon-3xl">
-        <i class="ti-email text-dark"></i>
-        <h6 class="font-weight-normal margin-top-20">Email</h6>
-        <p>email@example.com</p>
-      </div>
-      <div class="col-12 col-md-4 icon-3xl">
-        <i class="ti-location-pin text-dark"></i>
-        <h6 class="font-weight-normal margin-top-20">Address</h6>
-        <p>121 King St, Melbourne VIC 3000</p>
-      </div>
-    </div><!-- end row -->
-  </div><!-- end container -->
-</div>
-<!-- end Contact section -->
 
 <!-- Google Maps -->
 <div class="mapouter">

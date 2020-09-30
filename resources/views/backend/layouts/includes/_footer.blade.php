@@ -36,8 +36,7 @@
 <script src="{{asset('component/assets/plugins/gmaps.min.js')}}"></script>
 <!-- Scripts -->
 <script src="{{asset('component/assets/js/functions.min.js')}}"></script>
+@yield('script')
 </body>
-
-<!-- Mirrored from mono.flatheme.net/Home/Event.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Mar 2019 04:30:31 GMT -->
 
 </html>
