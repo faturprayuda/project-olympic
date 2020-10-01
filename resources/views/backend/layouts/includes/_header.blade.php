@@ -19,4 +19,11 @@
   <!-- Fonts/Icons -->
   <link href="{{asset('component/assets/plugins/font-awesome/css/all.css')}}" rel="stylesheet">
   <link href="{{asset('component/assets/plugins/themify/themify-icons.min.css')}}" rel="stylesheet">
+
+  {{-- glideJs --}}
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://unpkg.com/@glidejs/glide"></script>
+
+  <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.core.min.css')}}">
+  <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.theme.min.css')}}">
 </head>

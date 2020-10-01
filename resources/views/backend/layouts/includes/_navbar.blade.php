@@ -19,7 +19,7 @@
           <a class="nav-link" href="{{route('user.daftar.sekolah.index')}}">Daftar Sekolah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('user.peringkat.sekolah.index')}}">Peringkat Sekolah</a>
+          <a class="nav-link" href="{{route('user.peringkat.sekolah.index')}}">Peringkat</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('about.index')}}">Tentang Kami</a>

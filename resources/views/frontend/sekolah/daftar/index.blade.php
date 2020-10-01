@@ -1,34 +1,21 @@
 @extends('backend.layouts.main_layout')
 @section('main-content')
-<div class="container">
-  <table class="table table-striped">
-    <thead>
+<div class="container mt-5 mb-5">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col" class="text-center">Nama Sekolah</th>
+        <th scope="col" class="text-center">Jumlah Peserta</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      @for($i = 0; $i < 10; $i++) <tr>
+        <th scope="row">{{$i + 1}}</th>
+        <td class="text-center">SMA {{$i + 1}}</td>
+        <td class="text-center">{{rand(0,10)}}</td>
+        </tr>
+        @endfor
     </tbody>
   </table>
 </div>
