@@ -47,19 +47,25 @@ Route::get('/about', function () {
 // route admin
 Route::get('/admin/index', function () {
     return view('backend.users.admin.index');
-})->name('admin.index');
+})->name('admin.index')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/kelola/berita', function () {
         return view('backend.users.admin.berita.index');
-    })->name('berita.index');
+    })->name('berita.index')->middleware('auth');
     Route::get('/kelola/pengumuman', function () {
         return view('backend.users.admin.pengumuman.index');
-    })->name('pengumuman.index');
+    })->name('pengumuman.index')->middleware('auth');
     Route::get('/kelola/daftar/sekolah', function () {
         return view('backend.users.admin.sekolah.daftar.index');
-    })->name('daftar.sekolah.index');
+    })->name('daftar.sekolah.index')->middleware('auth');
     Route::get('/kelola/peringkat/sekolah', function () {
         return view('backend.users.admin.sekolah.peringkat.index');
-    })->name('peringkat.index');
+    })->name('peringkat.index')->middleware('auth');
 });
+
+Auth::routes();
+Route::get('/forget-password', 'Auth\ForgetPasswordController@reset')->name('forgot.pass');
+Route::post('/forget-password', 'Auth\ForgetPasswordController@resetPass')->name('reset.pass');
+
+Route::get('/home', 'HomeController@index')->name('home');
