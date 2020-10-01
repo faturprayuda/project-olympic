@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-sticky navbar-transparent">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="{{route('index.home')}}">
         @include('backend.layouts.includes._img_logo')
       </a>
       <ul class="nav">

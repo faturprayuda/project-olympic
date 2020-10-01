@@ -41,27 +41,27 @@
         </a>
       </li>
       <li class="nav-item ">
-        <a class="" href="dashboard/dashboard1.html">
+        <a class="" href="{{route('user.berita.index')}}">
           <i class="nav-icon i-Newspaper-2"></i>
           <span class="item-name">Berita</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="dashboard/dashboard2.html" class="">
+        <a href="{{route('user.pengumuman.index')}}" class="">
           <i class="nav-icon i-Communication-Tower-2"></i>
           <span class="item-name">Pengumuman</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="" href="dashboard/dashboard3.html">
+        <a class="" href="{{route('user.daftar.sekolah.index')}}">
           <i class="nav-icon i-Building"></i>
           <span class="item-name">Daftar Sekolah</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="" href="dashboard/dashboard4.html">
+        <a class="" href="{{route('user.peringkat.sekolah.index')}}">
           <i class="nav-icon i-Bar-Chart-2"></i>
-          <span class="item-name">Peringkat Sekolah</span>
+          <span class="item-name">Peringkat</span>
         </a>
       </li>
     </ul>

@@ -1,10 +1,7 @@
 @include('backend.layouts.includes.dashboard._header_dashboard')
 
 <body class="text-left">
-
-  <!-- ============ Compact Layout start ============= -->
-  <!-- ============ Large SIdebar Layout start ============= -->
-
+  @include('sweet::alert')
 
   <div class="app-admin-wrap layout-sidebar-large clearfix">
     {{-- navbar --}}
