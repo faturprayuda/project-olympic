@@ -10,12 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      @for($i = 0; $i < 10; $i++) <tr>
-        <th scope="row">{{$i + 1}}</th>
-        <td class="text-center">SMA {{$i + 1}}</td>
-        <td class="text-center">{{rand(0,10)}}</td>
+      @php $i = 1; @endphp
+        @foreach($list as $sekolah => $peserta)
+        <tr>
+        <th scope="row">{{$i++}}</th>
+        <td class="text-center">{{$sekolah}}</td>
+        <td class="text-center">{{$peserta->count()}}</td>
         </tr>
-        @endfor
+        @endforeach
     </tbody>
   </table>
 </div>
