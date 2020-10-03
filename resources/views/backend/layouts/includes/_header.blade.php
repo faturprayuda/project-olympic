@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <title>Mono - Creative Multi-Purpose HTML5 Template</title>
   <!-- Favicon -->
   <link href="{{asset('component/assets/images/favicon.png')}}" rel="shortcut icon">
@@ -23,6 +25,7 @@
   {{-- glideJs --}}
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script src="https://unpkg.com/@glidejs/glide"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.core.min.css')}}">
   <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.theme.min.css')}}">
