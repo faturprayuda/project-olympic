@@ -32,9 +32,10 @@
         </div>
         <a href="#" style="font-size: 20px; font-weight: bold">{{$row->judul_pengumuman}}</a>
         @if(strlen($row->isi_pengumuman) > 200)
-        <p>{{substr($row->isi_pengumuman,0,200)}}<span class="titik">......</span><span class="read-more-content hide_content">{{substr($row->isi_pengumuman,200)}}</span></p>
-        <a class="text-btn button-font-2 read-more-show" href="#">Baca Lebih Lanjut</a>
-        <a class="text-btn button-font-2 read-more-hide hide_content" href="#">Baca Lebih Sedikit</a>
+        <p>{{substr($row->isi_pengumuman,0,200)}}<span class="titik-{{$row->id}}">......</span>
+        <span class="read-more-content-{{$row->id}} hide_content">{{substr($row->isi_pengumuman,200)}}</span></p>
+        <a class="text-btn button-font-2 read-more-show" href="#" data-idshow="{{$row->id}}">Baca Lebih Lanjut</a>
+        <a class="text-btn button-font-2 read-more-hide hide_content" href="#" data-idhide="{{$row->id}}">Baca Lebih Sedikit</a>
         @else
         <p>{{$row->isi_pengumuman}}</p>
         @endif
@@ -60,9 +61,10 @@
 
             // Set up the toggle effect:
             $('.read-more-show').on('click', function(e) {
-              $(this).next('.read-more-hide').removeClass('hide_content');
-              $('.read-more-content').removeClass('hide_content');
-              $('.titik').addClass('hide_content');
+              $(this).next(idHide).removeClass('hide_content');
+              var idHide = $(this).data('idshow');
+              $(`.read-more-content-${idHide}`).removeClass('hide_content');
+              $(`.titik-${idHide}`).addClass('hide_content');
               $(this).addClass('hide_content');
               e.preventDefault();
             });
@@ -70,10 +72,10 @@
             // Changes contributed by @diego-rzg
             $('.read-more-hide').on('click', function(e) {
               $(this).addClass('hide_content');
-              $('.read-more-content').addClass('hide_content');
-              $('.titik').removeClass('hide_content');
-              $(this).prev('.read-more-show').removeClass('hide_content'); // Hide only the preceding "Read More"
-              // $(this).prev
+              var idShow = $(this).data('idhide');
+              $(`.read-more-content-${idShow}`).addClass('hide_content');
+              $(`.titik-${idShow}`).removeClass('hide_content');
+              $(this).prev(idShow).removeClass('hide_content'); // Hide only the preceding "Read More"
               e.preventDefault();
             });
 </script>
