@@ -12,7 +12,6 @@ class Berita extends Model
     	'gambar',
     	'judul_berita',
     	'isi_berita',
-    	'kategori',
     	'created_at',
     	'updated_at'
     ];

@@ -21,13 +21,13 @@ Route::get('/', function () {
     return view('index');
 })->name('index.home');
 
-Route::get('/berita', function () {
-    return view('frontend.berita.index');
-})->name('user.berita.index');
 
-Route::get('/pengumuman', function () {
-    return view('frontend.pengumuman.index');
-})->name('user.pengumuman.index');
+Route::resource('/berita', 'frontend\BeritaController')->only(['index', 'show'])->names('user.berita')->parameters('id');
+Route::resource('/pengumuman', 'frontend\PengumumanController')->only(['index', 'show'])->names('user.pengumuman')->parameters('id');
+
+// Route::get('/pengumuman', function () {
+//     return view('frontend.pengumuman.index');
+// })->name('user.pengumuman.index');
 
 Route::group(['prefix' => 'sekolah'], function () {
     Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
@@ -46,6 +46,17 @@ Route::get('/admin/index', function () {
 })->name('admin.index')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->only(['index', 'store', 'destroy'])->names('daftar.sekolah')->parameters('id')->middleware('auth');
+    Route::put('/kelola/daftar/sekolah/update', 'DaftarSekolahController@update')->name('daftar.sekolah.ubah')->middleware('auth');
+    Route::resource('/kelola/berita', 'BeritaController')->names('berita')->only(['index', 'destroy', 'store'])->parameters('id')->middleware('auth');
+    Route::post('/kelola/berita/update', 'BeritaController@update')->name('berita.ubah')->middleware('auth');
+    Route::resource('/kelola/pengumuman', 'PengumumanController')->names('pengumuman')->only(['index', 'destroy', 'store'])->parameters('id')->middleware('auth');
+    Route::post('/kelola/pengumuman/update', 'PengumumanController@update')->name('pengumuman.ubah')->middleware('auth');
+    Route::resource('/kelola/peserta', 'DaftarPesertaController')->names('peserta')->only(['index', 'destroy'])->parameters('id')->middleware('auth');
+    Route::get('/kelola/peringkat/sekolah', function () {
+        return view('backend.users.admin.sekolah.peringkat.index');
+    })->name('peringkat.index')->middleware('auth');
+
     Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->names('daftar.sekolah')->parameters('id')->middleware('auth');
     Route::get('/kelola/berita', function () {
         return view('backend.users.admin.berita.index');

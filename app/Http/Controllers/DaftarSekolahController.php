@@ -122,9 +122,21 @@ class DaftarSekolahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+         $validator = Validator::make($request->all(),[
+            'nama_sekolah' => 'required|max:255',           
+        ]);
+
+         $id = $request->id;
+
+         $ubah = DaftarSekolah::find($id);
+         $data = [
+            'nama_sekolah' => $request->nama_sekolah,
+         ];
+         $ubah->update($data);
+
+         return redirect()->back()->with(['success' => 'Nama Sekolah Berhasil Diubah']);
     }
 
     /**

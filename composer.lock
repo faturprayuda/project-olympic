@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-"content-hash": "f5e9d6e7eca884d9ca9309f7665cc694",
+    "content-hash": "b4e5f9e6aef48ac8e627482eba7ee371",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1232,6 +1232,16 @@
                 "php",
                 "phpspreadsheet"
             ],
+            "funding": [
+                {
+                    "url": "https://laravel-excel.com/commercial-support",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/patrickbrouwers",
+                    "type": "github"
+                }
+            ],
             "time": "2020-09-29T07:30:12+00:00"
         },
         {
@@ -1292,6 +1302,12 @@
             "keywords": [
                 "stream",
                 "zip"
+            ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/zipstream",
+                    "type": "open_collective"
+                }
             ],
             "time": "2020-05-30T13:11:16+00:00"
         },
