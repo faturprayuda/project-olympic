@@ -39,13 +39,14 @@
                      json_decode($peserta);
                     @endphp
 
-                    <a href="#" class="text-success mr-2" data-toggle="tooltip" data-placement="bottom" title="Ubah">
+                    <a href="#" class="text-success mr-2 ubah" data-toggle="modal" data-target="#ubahModal" data-id="{{$peserta[$i++]['sekolah_id']}}" data-sekolah="{{$sekolah}}"  data-placement="bottom" title="Ubah">
                       <i class="nav-icon i-Pen-2 font-weight-bold"></i>
                     </a>
-                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$peserta[$i++]['sekolah_id']}}"data-placement="bottom" title="Hapus">
+
+
+                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$peserta[$i++]['sekolah_id']}}" data-placement="bottom" title="Hapus">
                       <i class="nav-icon i-Close-Window font-weight-bold"></i>
                     </a>
-                    
                   </td>
                 </tr>
               @endforeach
@@ -90,6 +91,34 @@
               title="Tambah Siswa" id="tambah-siswa">
               <i class="nav-icon i-Add font-weight-bold"></i>
             </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Ubah Sekolah-->
+<div class="modal fade" id="ubahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ubah Nama Sekolah</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{{ route('daftar.sekolah.ubah')}}">
+          @csrf
+          @method('PUT')
+          <div class="form-group">
+            <label for="nama_sekolah">Nama Sekolah</label>
+            <input type="hidden" name="id" id="id-sekolahan" value="">
+            <input type="text" class="form-control" id="nama_sekolahan" name="nama_sekolah" value="">
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -161,5 +190,16 @@
 
     })
   }
+</script>
+<script>
+  $(document).on('click','.ubah', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    var sekolah = $(this).data('sekolah');
+
+    document.getElementById('id-sekolahan').value = id;
+    document.getElementById('nama_sekolahan').value = sekolah;
+
+  })
 </script>
 @endsection

@@ -41,7 +41,7 @@
         </a>
       </li>
       <li class="nav-item ">
-        <a class="" href="{{route('user.berita.index')}}">
+        <a class="" href="{{route('berita.index')}}">
           <i class="nav-icon i-Newspaper-2"></i>
           <span class="item-name">Berita</span>
         </a>
@@ -90,6 +90,12 @@
         <a class="" href="{{route('peringkat.index')}}">
           <i class="nav-icon i-Bar-Chart-2"></i>
           <span class="item-name">kelola Peringkat Sekolah</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="" href="{{route('peserta.index')}}">
+          <i class="nav-icon i-Bar-Chart-2"></i>
+          <span class="item-name">Lihat Peserta</span>
         </a>
       </li>
     </ul>

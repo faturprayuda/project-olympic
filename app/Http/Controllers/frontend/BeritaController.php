@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\frontend;
 
-use App\DaftarPeserta;
+use App\Http\Controllers\Controller;
+use App\Berita;
 use Illuminate\Http\Request;
 
-class DaftarPesertaController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +15,9 @@ class DaftarPesertaController extends Controller
      */
     public function index()
     {
-        $data['list'] = DaftarPeserta::join('tbl_daftar_sekolah','tbl_daftar_sekolah.id','=','tb_peserta.id_sekolah')
-                                      ->select([
-                                        'tb_peserta.id as id_peserta',
-                                        'nama_sekolah',
-                                        'nama_peserta',
-                                      ])->orderBy('nama_sekolah')->get();
-        return view('backend.users.admin.peserta.index', $data);
+        $data['list'] = Berita::paginate(4);
+
+        return view('frontend.berita.index',$data);
     }
 
     /**
@@ -86,9 +83,6 @@ class DaftarPesertaController extends Controller
      */
     public function destroy($id)
     {
-        $find = DaftarPeserta::find($id);
-        $find->delete();
-
-        return 'Data Berhasil Dihapus';
+        
     }
 }
