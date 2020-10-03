@@ -49,7 +49,9 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['list'] = Berita::find($id);
+
+        return view('frontend.berita.detail',$data);
     }
 
     /**
