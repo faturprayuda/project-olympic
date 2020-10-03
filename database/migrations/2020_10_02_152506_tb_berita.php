@@ -18,7 +18,6 @@ class TbBerita extends Migration
             $table->string('gambar');
             $table->text('judul_berita');
             $table->text('isi_berita');
-            $table->string('kategori');
             $table->timestamps();
         });
     }

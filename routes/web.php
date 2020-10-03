@@ -21,13 +21,13 @@ Route::get('/', function () {
     return view('index');
 })->name('index.home');
 
+Route::get('/berita', function () {
+    return view('frontend.berita.index');
+})->name('user.berita.index');
 
-Route::resource('/berita', 'frontend\BeritaController')->only(['index', 'show'])->names('user.berita')->parameters('id');
-Route::resource('/pengumuman', 'frontend\PengumumanController')->only(['index', 'show'])->names('user.pengumuman')->parameters('id');
-
-// Route::get('/pengumuman', function () {
-//     return view('frontend.pengumuman.index');
-// })->name('user.pengumuman.index');
+Route::get('/pengumuman', function () {
+    return view('frontend.pengumuman.index');
+})->name('user.pengumuman.index');
 
 Route::group(['prefix' => 'sekolah'], function () {
     Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
@@ -58,14 +58,6 @@ Route::group(['prefix' => 'admin'], function () {
     })->name('peringkat.index')->middleware('auth');
 
     Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->names('daftar.sekolah')->parameters('id')->middleware('auth');
-    Route::get('/kelola/berita', function () {
-        return view('backend.users.admin.berita.index');
-    })->name('berita.index')->middleware('auth');
-    Route::get('/kelola/pengumuman', function () {
-        return view('backend.users.admin.pengumuman.index');
-    })->name('pengumuman.index')->middleware('auth');
-    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->only(['index', 'store', 'destroy'])->names('daftar.sekolah')->parameters('id')->middleware('auth');
-    Route::put('/kelola/daftar/sekolah/update', 'DaftarSekolahController@update')->name('daftar.sekolah.ubah')->middleware('auth');
     Route::get('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@index')->name('peringkat.index')->middleware('auth');
     Route::post('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@store')->name('upload.file')->middleware('auth');
 });
