@@ -30,7 +30,7 @@
             </div>
           </div>
           <h5><a href="#">{{$row->judul_berita}}</a></h5>
-          <p>{{$row->isi_berita}}</p>
+          <p>{{substr($row->isi_berita,0,200)}}<span>........</span></p>
           <a class="text-btn button-font-2" href="{{route('user.berita.show',$row->id)}}">Lihat Berita</a>
         </div>
       </div>

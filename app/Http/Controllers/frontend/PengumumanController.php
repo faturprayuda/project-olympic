@@ -22,7 +22,7 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $data['list'] = $this->pengumuman->paginate(4);
+        $data['list'] = $this->pengumuman->orderBy('created_at', 'DESC')->paginate(4);
 
         return view('frontend.pengumuman.index',$data);
     }

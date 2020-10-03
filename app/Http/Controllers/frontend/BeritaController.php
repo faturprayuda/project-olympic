@@ -15,7 +15,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $data['list'] = Berita::paginate(4);
+        $data['list'] = Berita::orderBy('created_at','DESC')->paginate(4);
 
         return view('frontend.berita.index',$data);
     }
