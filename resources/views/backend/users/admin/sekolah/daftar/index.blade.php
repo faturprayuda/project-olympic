@@ -24,23 +24,31 @@
               <thead>
                 <tr>
                   <th>Nama Sekolah</th>
-                  <th>Nama Siswa</th>
+                  <th>Jumlah Peserta</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
+              @foreach($list as $sekolah => $peserta)
                 <tr>
-                  <td>Tiger</td>
-                  <td>Nixon</td>
-                  <td>
+                  <td>{{$sekolah}}</td>
+                  <td>{{$peserta->count()}}</td>
+                  <td> 
+                    @php
+                    $i = 0;
+                     json_decode($peserta);
+                    @endphp
+
                     <a href="#" class="text-success mr-2" data-toggle="tooltip" data-placement="bottom" title="Ubah">
                       <i class="nav-icon i-Pen-2 font-weight-bold"></i>
                     </a>
-                    <a href="#" class="text-danger mr-2" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$peserta[$i++]['sekolah_id']}}"data-placement="bottom" title="Hapus">
                       <i class="nav-icon i-Close-Window font-weight-bold"></i>
                     </a>
+                    
                   </td>
                 </tr>
+              @endforeach
               </tbody>
             </table>
           </div>
@@ -68,23 +76,24 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="post" action="{{ route('daftar.sekolah.store')}}">
+          @csrf
           <div class="form-group">
             <label for="nama_sekolah">Nama Sekolah</label>
-            <input type="text" class="form-control" id="nama_sekolah">
+            <input type="text" class="form-control" name="nama_sekolah[]">
           </div>
-          <div class="form-group">
+          <div class="form-group peserta">
             <label for="nama_siswa">Nama Siswa</label>
-            <input type="text" class="form-control" id="nama_siswa">
-            <a href="#" class="text-success mr-2 text-20" data-toggle="tooltip" data-placement="bottom"
-              title="Tambah Siswa">
+            <input type="text" class="form-control" name="nama_peserta[]">
+          </div>
+          <a href="javascript:void(0)" class="text-success mr-2 text-20" data-toggle="tooltip" data-placement="bottom"
+              title="Tambah Siswa" id="tambah-siswa">
               <i class="nav-icon i-Add font-weight-bold"></i>
             </a>
-          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button class="btn btn-primary">Save changes</button>
         </form>
       </div>
     </div>
@@ -99,12 +108,58 @@
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   $('#example').DataTable();
 </script>
 <script>
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
+
+  var index = 0;
+
+  $('#tambah-siswa').click(function () {
+      index+=1;
+
+      const tambahSiswa = '<input type="text" class="form-control" name="nama_peserta['+index+']">';
+
+      $('.peserta').append(tambahSiswa);
+  });
+
+  function deleteSekolah(){
+    $(document).on('click','.delete', function(e){
+      var id = $(this).data('id');
+      var url = '{{route("daftar.sekolah.destroy",":id")}}';
+      e.preventDefault();
+        swal({
+          title: 'Menghapus Data Sekolah Maka Akan Menghapus Semua Peserta!',
+          icon: 'warning',
+          button: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if(willDelete){
+            $.ajax({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              method: 'DELETE',
+              url: url.replace(':id',id),
+              success: function(data){
+                swal({
+                  title : 'Data Berhasil Dihapus',
+                  icon : 'success',
+                });
+                window.location = "{{ route('daftar.sekolah.index') }}";
+              }
+            });
+          }
+        });
+
+
+
+    })
+  }
 </script>
 @endsection

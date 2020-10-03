@@ -30,9 +30,7 @@ Route::get('/pengumuman', function () {
 })->name('user.pengumuman.index');
 
 Route::group(['prefix' => 'sekolah'], function () {
-    Route::get('/daftar', function () {
-        return view('frontend.sekolah.daftar.index');
-    })->name('user.daftar.sekolah.index');
+    Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
 
     Route::get('/peringkat', 'Users\User\PeringkatController@index')->name('user.peringkat.sekolah.index');
 });
@@ -48,6 +46,7 @@ Route::get('/admin/index', function () {
 })->name('admin.index')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->names('daftar.sekolah')->parameters('id')->middleware('auth');
     Route::get('/kelola/berita', function () {
         return view('backend.users.admin.berita.index');
     })->name('berita.index')->middleware('auth');
@@ -64,5 +63,6 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 Route::get('/forget-password', 'Auth\ForgetPasswordController@reset')->name('forgot.pass');
 Route::post('/forget-password', 'Auth\ForgetPasswordController@resetPass')->name('reset.pass');
+Route::post('/signout', 'Auth\LoginController@logout')->name('signout');
 
 Route::get('/home', 'HomeController@index')->name('home');
