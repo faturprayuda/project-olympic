@@ -20,6 +20,8 @@
   @yield('after-style')
 
   <script src="{{ asset('common/vendors/font-awesome/js/all.js') }}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   
 
 </head>

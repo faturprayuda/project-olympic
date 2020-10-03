@@ -93,7 +93,7 @@ class DaftarSekolahController extends Controller
             DaftarPeserta::create($daftarPeserta);
         }
 
-        return redirect()->back()->with(['success' => 'Berhasil Diinput']);
+        return redirect()->back()->withS('success', 'Data Berhasil Ditambahkan');
     }
 
     /**

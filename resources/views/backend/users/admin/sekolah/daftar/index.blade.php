@@ -35,18 +35,19 @@
                   <td>{{$peserta->count()}}</td>
                   <td> 
                     @php
-                    $i = 0;
-                     json_decode($peserta);
+                     $i = 0;
+                     $data = json_decode($peserta);
                     @endphp
 
-                    <a href="#" class="text-success mr-2 ubah" data-toggle="modal" data-target="#ubahModal" data-id="{{$peserta[$i++]['sekolah_id']}}" data-sekolah="{{$sekolah}}"  data-placement="bottom" title="Ubah">
+                    @if($i < count($data) )
+                    <a href="#" class="text-success mr-2 ubah" data-toggle="modal" data-target="#ubahModal" data-id="{{$data[$i]->sekolah_id}}" data-sekolah="{{$sekolah}}"  data-placement="bottom" title="Ubah">
                       <i class="nav-icon i-Pen-2 font-weight-bold"></i>
                     </a>
-
-
-                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$peserta[$i++]['sekolah_id']}}" data-placement="bottom" title="Hapus">
+                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$data[$i]->sekolah_id}}" data-placement="bottom" title="Hapus">
                       <i class="nav-icon i-Close-Window font-weight-bold"></i>
                     </a>
+                    @php $i++; @endphp
+                    @endif
                   </td>
                 </tr>
               @endforeach
