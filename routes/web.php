@@ -53,9 +53,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/kelola/pengumuman', function () {
         return view('backend.users.admin.pengumuman.index');
     })->name('pengumuman.index')->middleware('auth');
-    Route::get('/kelola/daftar/sekolah', function () {
-        return view('backend.users.admin.sekolah.daftar.index');
-    })->name('daftar.sekolah.index')->middleware('auth');
+    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->only(['index', 'store', 'destroy'])->names('daftar.sekolah')->parameters('id')->middleware('auth');
+    Route::put('/kelola/daftar/sekolah/update', 'DaftarSekolahController@update')->name('daftar.sekolah.ubah')->middleware('auth');
     Route::get('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@index')->name('peringkat.index')->middleware('auth');
     Route::post('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@store')->name('upload.file')->middleware('auth');
 });
