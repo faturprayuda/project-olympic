@@ -13,7 +13,8 @@ class DaftarPeserta extends Model
 
     protected $fillable = [
     	'id_sekolah',
-    	'nama_peserta',
+        'nama_peserta',
+    	'email_peserta',
     	'created_at',
     	'updated_at'
     ];

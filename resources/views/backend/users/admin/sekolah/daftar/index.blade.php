@@ -35,18 +35,19 @@
                   <td>{{$peserta->count()}}</td>
                   <td> 
                     @php
-                    $i = 0;
-                     json_decode($peserta);
+                     $i = 0;
+                     $data = json_decode($peserta);
                     @endphp
 
-                    <a href="#" class="text-success mr-2 ubah" data-toggle="modal" data-target="#ubahModal" data-id="{{$peserta[$i++]['sekolah_id']}}" data-sekolah="{{$sekolah}}"  data-placement="bottom" title="Ubah">
+                    @if($i < count($data) )
+                    <a href="#" class="text-success mr-2 ubah" data-toggle="modal" data-target="#ubahModal" data-id="{{$data[$i]->sekolah_id}}" data-sekolah="{{$sekolah}}"  data-placement="bottom" title="Ubah">
                       <i class="nav-icon i-Pen-2 font-weight-bold"></i>
                     </a>
-
-
-                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$peserta[$i++]['sekolah_id']}}" data-placement="bottom" title="Hapus">
+                    <a onClick="deleteSekolah();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$data[$i]->sekolah_id}}" data-placement="bottom" title="Hapus">
                       <i class="nav-icon i-Close-Window font-weight-bold"></i>
                     </a>
+                    @php $i++; @endphp
+                    @endif
                   </td>
                 </tr>
               @endforeach
@@ -84,8 +85,9 @@
             <input type="text" class="form-control" name="nama_sekolah[]">
           </div>
           <div class="form-group peserta">
-            <label for="nama_siswa">Nama Siswa</label>
-            <input type="text" class="form-control" name="nama_peserta[]">
+            <label for="nama_siswa">Nama & Email Peserta</label>
+            <input type="text" class="form-control" name="nama_peserta[]" placeholder="Nama Peserta" required>
+            <input type="email" class="form-control" name="email_peserta[]" placeholder="Email Peserta" required>
           </div>
           <a href="javascript:void(0)" class="text-success mr-2 text-20" data-toggle="tooltip" data-placement="bottom"
               title="Tambah Siswa" id="tambah-siswa">
@@ -151,9 +153,10 @@
   $('#tambah-siswa').click(function () {
       index+=1;
 
-      const tambahSiswa = '<input type="text" class="form-control" name="nama_peserta['+index+']">';
+      const tambahSiswa = '<input type="text" class="form-control" name="nama_peserta['+index+']" placeholder="Nama Peserta" required>';
+      const tambahEmail = '<input type="email" class="form-control" name="email_peserta['+index+']" placeholder="Email Peserta" required>';
 
-      $('.peserta').append(tambahSiswa);
+      $('.peserta').append(tambahSiswa+tambahEmail);
   });
 
   function deleteSekolah(){

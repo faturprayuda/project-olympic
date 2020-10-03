@@ -59,7 +59,8 @@ class DaftarSekolahController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'nama_sekolah' => 'required|max:255',
-            'nama_peserta.*' => 'required|max:255',            
+            'nama_peserta.*' => 'required|max:255',
+            'email_peserta.*' => 'required|email',           
         ]);
 
         if ($validator->fails()) {
@@ -69,6 +70,7 @@ class DaftarSekolahController extends Controller
 
         $namaSekolah = $request->nama_sekolah;
         $namaPeserta = $request->nama_peserta;
+        $emailPeserta = $request->email_peserta;
         $daftarSekolah = [
             
                 'nama_sekolah' => $namaSekolah[0],
@@ -83,14 +85,15 @@ class DaftarSekolahController extends Controller
             $daftarPeserta = [
                 
                     'id_sekolah' => $idSekolah,
-                    'nama_peserta' => $namaPeserta[$i]
+                    'nama_peserta' => $namaPeserta[$i],
+                    'email_peserta' => $emailPeserta[$i],
                 
             ];
 
             DaftarPeserta::create($daftarPeserta);
         }
 
-        return redirect()->back()->with(['success' => 'Berhasil Diinput']);
+        return redirect()->back()->withS('success', 'Data Berhasil Ditambahkan');
     }
 
     /**

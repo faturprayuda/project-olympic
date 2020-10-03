@@ -8,9 +8,11 @@
   <meta name="keywords" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   
-  <title>Mono - Creative Multi-Purpose HTML5 Template</title>
+  <title>{{env('APP_NAME', 'Trilogi Olimpiade')}}</title>
   <!-- Favicon -->
   <link href="{{asset('component/assets/images/favicon.png')}}" rel="shortcut icon">
+  <link rel="stylesheet" href="{{ asset('common/vendors/font-awesome/css/fontawesome.min.css') }}">
+
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -21,11 +23,13 @@
   <!-- Fonts/Icons -->
   <link href="{{asset('component/assets/plugins/font-awesome/css/all.css')}}" rel="stylesheet">
   <link href="{{asset('component/assets/plugins/themify/themify-icons.min.css')}}" rel="stylesheet">
+  @yield('style')
 
   {{-- glideJs --}}
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script src="https://unpkg.com/@glidejs/glide"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="{{ asset('common/vendors/font-awesome/js/all.js') }}"></script>
 
   <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.core.min.css')}}">
   <link rel="stylesheet" href="{{asset('glideJs/dist/css/glide.theme.min.css')}}">

@@ -18,6 +18,7 @@ class DaftarPesertaController extends Controller
                                       ->select([
                                         'tb_peserta.id as id_peserta',
                                         'nama_sekolah',
+                                        'email_peserta',
                                         'nama_peserta',
                                       ])->orderBy('nama_sekolah')->get();
         return view('backend.users.admin.peserta.index', $data);

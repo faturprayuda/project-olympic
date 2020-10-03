@@ -2,10 +2,10 @@
 @section('main-content')
 <div class="main-content">
   <div class="breadcrumb">
-    <h1>Version 1</h1>
+    <!-- <h1>Version 1</h1> -->
     <ul>
       <li><a href="#">Dashboard</a></li>
-      <li>Version 1</li>
+      <li>Admin</li>
     </ul>
   </div>
 
@@ -13,49 +13,23 @@
 
   <div class="row">
     <!-- ICON BG -->
-    <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="col-lg-6 col-md-6 col-sm-6">
       <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
         <div class="card-body text-center">
-          <i class="i-Add-User"></i>
+          <i class="fa fa-school" style="width:30%; height:20%"></i>
           <div class="content">
-            <p class="text-muted mt-2 mb-0">New Leads</p>
-            <p class="text-primary text-24 line-height-1 mb-2">205</p>
+            <p class="text-primary text-24 line-height-1 mb-6" style="width: max-content;">Jummlah Sekolah : <span>{{DB::table('tbl_daftar_sekolah')->count()}}</span></p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="col-lg-6 col-md-12 col-sm-6">
       <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
         <div class="card-body text-center">
-          <i class="i-Financial"></i>
+          <i class="fas fa-user-friends" style="width:30%; height:20%"></i>
           <div class="content">
-            <p class="text-muted mt-2 mb-0">Sales</p>
-            <p class="text-primary text-24 line-height-1 mb-2">$4021</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
-        <div class="card-body text-center">
-          <i class="i-Checkout-Basket"></i>
-          <div class="content">
-            <p class="text-muted mt-2 mb-0">Orders</p>
-            <p class="text-primary text-24 line-height-1 mb-2">80</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
-        <div class="card-body text-center">
-          <i class="i-Money-2"></i>
-          <div class="content">
-            <p class="text-muted mt-2 mb-0">Expense</p>
-            <p class="text-primary text-24 line-height-1 mb-2">$1200</p>
+            <p class="text-primary text-24 line-height-1 mb-6" style="width: max-content;">Jumlah Peserta : <span>{{DB::table('tb_peserta')->count()}}</span></p>
           </div>
         </div>
       </div>
@@ -63,7 +37,7 @@
 
   </div>
 
-  <div class="row">
+ <!--  <div class="row">
     <div class="col-md-12">
       <div class="card o-hidden mb-4">
         <div class="card-header d-flex align-items-center border-0">
@@ -188,6 +162,6 @@
 
 
     </div>
-  </div>
+  </div> -->
 </div>
 @endsection

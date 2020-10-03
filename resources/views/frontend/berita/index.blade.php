@@ -31,7 +31,7 @@
           </div>
           <h5><a href="#">{{$row->judul_berita}}</a></h5>
           <p>{{$row->isi_berita}}</p>
-          <a class="text-btn button-font-2" href="#">Read More</a>
+          <a class="text-btn button-font-2" href="{{route('user.berita.show',$row->id)}}">Lihat Berita</a>
         </div>
       </div>
       @endforeach
