@@ -34,16 +34,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach ($data_peringkat as $data => $d)
                 <tr>
-                  <td>Tiger</td>
-                  <td>Nixon</td>
-                  <td>85</td>
-                  <td>00:09:10</td>
-                  <td>10-11-2010</td>
-                  <td> : {{rand(1,10)}}</td>
-                  <td> : {{rand(1,10)}}</td>
-                  <td> : {{rand(1,10)}}</td>
+                  <td>{{$d->nama_sekolah}}</td>
+                  <td>{{$d->nama_peserta}}</td>
+                  <td>{{$d->nilai}}</td>
+                  <td>{{gmdate("H:i:s", $d->sisa_waktu)}}</td>
+                  <td>{{$d->tanggal}}</td>
+                  <td> : {{$d->medal_emas}}</td>
+                  <td> : {{$d->medal_perak}}</td>
+                  <td> : {{$d->medal_perunggu}}</td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -71,15 +73,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{{route('upload.file')}}" method="POST" enctype='multipart/form-data'>
+          @csrf
           <div class="form-group">
             <label for="file_excel">Masukkan File Excel</label>
-            <input type="file" class="form-control-file" id="file_excel">
+            <input type="file" class="form-control-file" id="file_excel" name="file_excel">
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button class="btn btn-primary">Save changes</button>
         </form>
       </div>
     </div>
