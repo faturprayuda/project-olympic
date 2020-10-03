@@ -133,7 +133,7 @@
 <!-- end Play video section -->
 
 <!-- Team section -->
-<div class="section">
+{{-- <div class="section">
   <div class="container">
     <div class="section-title text-center">
       <h2>Event Speakers</h2>
@@ -145,125 +145,125 @@
       <div class="col-12 col-md-3 team-box-circle">
         <div class="team-img team-img-lg">
           <img src="{{asset('component/assets/images/team-1.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Robert Vincent</h6>
-        <span>Entrepreneur</span>
-      </div>
-      <!-- Team box 2 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-2.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Brenda Johnson</h6>
-        <span>Entrepreneur</span>
-      </div>
-      <!-- Team box 3 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-3.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Rodney Scott</h6>
-        <span>Web Developer</span>
-      </div>
-      <!-- Team box 4 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-4.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Michelle White</h6>
-        <span>Graphic Designer</span>
-      </div>
-      <!-- Team box 5 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-5.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Alice Trumbo</h6>
-        <span>Marketer</span>
-      </div>
-      <!-- Team box 6 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-6.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Thomas Willis</h6>
-        <span>Web Designer</span>
-      </div>
-      <!-- Team box 7 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-7.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Mary Anderson</h6>
-        <span>Web Developer</span>
-      </div>
-      <!-- Team box 8 -->
-      <div class="col-12 col-md-3 team-box-circle">
-        <div class="team-img team-img-lg">
-          <img src="{{asset('component/assets/images/team-8.jpg')}}" alt="">
-          <div>
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <h6 class="font-weight-normal no-margin">Ernest Hermen</h6>
-        <span>Photographer</span>
-      </div>
-    </div><!-- end row -->
-  </div><!-- end container -->
+<div>
+  <ul>
+    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+  </ul>
 </div>
+</div>
+<h6 class="font-weight-normal no-margin">Robert Vincent</h6>
+<span>Entrepreneur</span>
+</div>
+<!-- Team box 2 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-2.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Brenda Johnson</h6>
+  <span>Entrepreneur</span>
+</div>
+<!-- Team box 3 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-3.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Rodney Scott</h6>
+  <span>Web Developer</span>
+</div>
+<!-- Team box 4 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-4.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Michelle White</h6>
+  <span>Graphic Designer</span>
+</div>
+<!-- Team box 5 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-5.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Alice Trumbo</h6>
+  <span>Marketer</span>
+</div>
+<!-- Team box 6 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-6.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Thomas Willis</h6>
+  <span>Web Designer</span>
+</div>
+<!-- Team box 7 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-7.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Mary Anderson</h6>
+  <span>Web Developer</span>
+</div>
+<!-- Team box 8 -->
+<div class="col-12 col-md-3 team-box-circle">
+  <div class="team-img team-img-lg">
+    <img src="{{asset('component/assets/images/team-8.jpg')}}" alt="">
+    <div>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <h6 class="font-weight-normal no-margin">Ernest Hermen</h6>
+  <span>Photographer</span>
+</div>
+</div><!-- end row -->
+</div><!-- end container -->
+</div> --}}
 <!-- end Team section -->
 
 <!-- Clients section -->

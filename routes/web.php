@@ -30,11 +30,9 @@ Route::resource('/pengumuman','frontend\PengumumanController')->only(['index','s
 // })->name('user.pengumuman.index');
 
 Route::group(['prefix' => 'sekolah'], function () {
-    Route::resource('/daftar','frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
+    Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
 
-    Route::get('/peringkat', function () {
-        return view('frontend.sekolah.peringkat.index');
-    })->name('user.peringkat.sekolah.index');
+    Route::get('/peringkat', 'Users\User\PeringkatController@index')->name('user.peringkat.sekolah.index');
 });
 
 Route::get('/about', function () {
@@ -58,11 +56,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/kelola/peringkat/sekolah', function () {
         return view('backend.users.admin.sekolah.peringkat.index');
     })->name('peringkat.index')->middleware('auth');
+
+    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->names('daftar.sekolah')->parameters('id')->middleware('auth');
+    Route::get('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@index')->name('peringkat.index')->middleware('auth');
+    Route::post('/kelola/peringkat/sekolah', 'Users\Admin\Kelola_Sekolah\PeringkatSekolahController@store')->name('upload.file')->middleware('auth');
 });
 
 Auth::routes();
 Route::get('/forget-password', 'Auth\ForgetPasswordController@reset')->name('forgot.pass');
 Route::post('/forget-password', 'Auth\ForgetPasswordController@resetPass')->name('reset.pass');
-Route::post('/signout','Auth\LoginController@logout')->name('signout');
+Route::post('/signout', 'Auth\LoginController@logout')->name('signout');
 
 Route::get('/home', 'HomeController@index')->name('home');

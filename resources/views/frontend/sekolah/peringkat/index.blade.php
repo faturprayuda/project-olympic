@@ -16,14 +16,18 @@
       </tr>
     </thead>
     <tbody>
-      @for($i = 0; $i < 10; $i++) <tr>
-        <th scope="row">{{$i + 1}}</th>
-        <td class="text-center">SMA {{$i + 1}}</td>
-        <td class="text-center">{{rand(0,10)}}</td>
-        <td class="text-center">{{rand(0,10)}}</td>
-        <td class="text-center">{{rand(0,10)}}</td>
-        </tr>
-        @endfor
+      @foreach ($peringkat_sekolah as $item)
+      <th scope="row">{{$loop->iteration}}</th>
+      <td class="text-center">{{$item->nama_sekolah}}</td>
+      <td class="text-center">{{$item->total_emas}}</td>
+      @foreach($peringkat_sekolah_perak as $key => $value)
+      <td class="text-center">{{$value->total_perak}}</td>
+      @endforeach
+      @foreach($peringkat_sekolah_perunggu as $key => $value)
+      <td class="text-center">{{$value->total_perunggu}}</td>
+      @endforeach
+      </tr>
+      @endforeach
     </tbody>
   </table>
 
@@ -32,8 +36,10 @@
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
+          @foreach($tanggal as $key => $data)
+
           <div class="glide__slide">
-            <p style="text-decoration: underline; cursor: context-menu;">Tanggal : 21-12-2012</p>
+            <p style="text-decoration: underline; cursor: context-menu;">Tanggal : {{$data->tanggal}}</p>
             <div class="row mt-3">
               <div class="col-lg-4 col-sm-12">
                 <table class="table table-striped table-bordered">
@@ -46,12 +52,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 1}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
+                    @foreach ($medal_emas as $item)
+                    <tr>
+                      <th scope="row" class="text-center">{{$loop->iteration}}</th>
+                      <td class="text-center" colspan="2">{{$item->nama_peserta}}</td>
+                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -66,12 +72,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 11}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
+                    @foreach ($medal_perak as $item)
+                    <tr>
+                      <th scope="row" class="text-center">{{$loop->iteration}}</th>
+                      <td class="text-center" colspan="2">{{$item->nama_peserta}}</td>
+                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -86,82 +92,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 21}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
+                    @foreach ($medal_perunggu as $item)
+                    <tr>
+                      <th scope="row" class="text-center">{{$loop->iteration}}</th>
+                      <td class="text-center" colspan="2">{{$item->nama_peserta}}</td>
+                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-          <div class="glide__slide">
-            <p style="text-decoration: underline; cursor: context-menu;">Tanggal : 21-12-2012</p>
-            <div class="row mt-3">
-              <div class="col-lg-4 col-sm-12">
-                <table class="table table-striped table-bordered">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col" class="text-center">#</th>
-                      <th scope="col" class="text-center">Nama Peserta</th>
-                      <th scope="col" class="text-center"><img src="{{asset('storage/img/assets/gold-medal.png')}}"
-                          alt="medal" style="width: 25px; height:25px;"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 1}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-lg-4 col-sm-12">
-                <table class="table table-striped table-bordered">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col" class="text-center">#</th>
-                      <th scope="col" class="text-center">Nama Peserta</th>
-                      <th scope="col" class="text-center"><img src="{{asset('storage/img/assets/silver-medal.png')}}"
-                          alt="medal" style="width: 25px; height:25px;"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 11}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-lg-4 col-sm-12">
-                <table class="table table-striped table-bordered">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col" class="text-center">#</th>
-                      <th scope="col" class="text-center">Nama Peserta</th>
-                      <th scope="col" class="text-center"><img src="{{asset('storage/img/assets/bronze-medal.png')}}"
-                          alt="medal" style="width: 25px; height:25px;"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @for($i = 0; $i < 10; $i++) <tr>
-                      <th scope="row" class="text-center">{{$i + 1}}</th>
-                      <td class="text-center">Bambang{{$i + 21}}</td>
-                      <td class="text-center">{{rand(0,10)}}</td>
-                      </tr>
-                      @endfor
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </ul>
       </div>
     </div>
