@@ -84,8 +84,9 @@
             <input type="text" class="form-control" name="nama_sekolah[]">
           </div>
           <div class="form-group peserta">
-            <label for="nama_siswa">Nama Siswa</label>
-            <input type="text" class="form-control" name="nama_peserta[]">
+            <label for="nama_siswa">Nama & Email Peserta</label>
+            <input type="text" class="form-control" name="nama_peserta[]" placeholder="Nama Peserta" required>
+            <input type="email" class="form-control" name="email_peserta[]" placeholder="Email Peserta" required>
           </div>
           <a href="javascript:void(0)" class="text-success mr-2 text-20" data-toggle="tooltip" data-placement="bottom"
               title="Tambah Siswa" id="tambah-siswa">
@@ -151,9 +152,10 @@
   $('#tambah-siswa').click(function () {
       index+=1;
 
-      const tambahSiswa = '<input type="text" class="form-control" name="nama_peserta['+index+']">';
+      const tambahSiswa = '<input type="text" class="form-control" name="nama_peserta['+index+']" placeholder="Nama Peserta" required>';
+      const tambahEmail = '<input type="email" class="form-control" name="email_peserta['+index+']" placeholder="Email Peserta" required>';
 
-      $('.peserta').append(tambahSiswa);
+      $('.peserta').append(tambahSiswa+tambahEmail);
   });
 
   function deleteSekolah(){

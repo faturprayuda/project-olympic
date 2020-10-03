@@ -18,6 +18,7 @@ class TbPeserta extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_sekolah');
             $table->string('nama_peserta');
+            $table->string('email_peserta');
             $table->timestamps();
 
             $table->foreign('id_sekolah')->references('id')->on('tbl_daftar_sekolah');

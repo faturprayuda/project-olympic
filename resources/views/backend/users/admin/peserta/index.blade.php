@@ -22,6 +22,7 @@
                 <tr>
                   <th>Nama Sekolah</th>
                   <th>Nama Peserta</th>
+                  <th>Email Peserta</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -30,6 +31,7 @@
                 <tr>
                   <td>{{$row->nama_sekolah}}</td>
                   <td>{{$row->nama_peserta}}</td>
+                  <td>{{$row->email_peserta}}</td>
                   <td> 
                     <a onClick="deletePeserta();" class="text-danger mr-2 delete" data-toggle="tooltip" data-id="{{$row->id_peserta}}" data-placement="bottom" title="Hapus">
                       <i class="nav-icon i-Close-Window font-weight-bold"></i>
