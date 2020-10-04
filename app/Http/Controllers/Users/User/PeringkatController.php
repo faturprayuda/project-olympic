@@ -13,11 +13,20 @@ class PeringkatController extends Controller
     public function index()
     {
         $data['tanggal'] = PeringkatSekolah::select('tanggal')->distinct('tanggal')->get();
+        $count = count($data['tanggal']);
+        $i = 0;
+
+
+        // dd(count($data['tanggal']));
         // dd($data['tanggal']);
-        $data['medal_emas'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal'])
-        ->where('medal_emas', '>', 0)->orderBy('tanggal')->get();
-        $data['medal_perak'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal',])->where('medal_perak', '>', 0)->get();
-        $data['medal_perunggu'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal'])->where('medal_perunggu', '>', 0)->get();
+        if($i < $count){
+
+            $data['medal_emas'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal'])->where('tanggal',$data['tanggal'][$i]['tanggal'])->orderBy('nilai','DESC')->skip(0)->limit(10)->get();
+            $data['medal_perak'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal',])->where('tanggal',$data['tanggal'][$i]['tanggal'])->orderBy('nilai','DESC')->skip(10)->limit(10)->get();
+            $data['medal_perunggu'] = PeringkatSekolah::select(['nama_peserta', 'nama_sekolah', 'tanggal'])->where('tanggal',$data['tanggal'][$i]['tanggal'])->orderBy('nilai','DESC')->skip(20)->limit(10)->get();
+
+            $i++;
+        }
 
         $data['peringkat_sekolah'] = DB::table('peringkat_sekolah')
             ->select([

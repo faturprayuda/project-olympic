@@ -26,7 +26,7 @@ class PeringkatImport implements ToModel
             'nama_sekolah'  => $row[2],
             'nilai'         => $row[3],
             'sisa_waktu'    => $sisa_waktu,
-            'tanggal'       => '2020-10-04'
+            'tanggal'       => Carbon::today('Asia/Jakarta'),
         ];
         return new PeringkatSekolah($data);
     }
