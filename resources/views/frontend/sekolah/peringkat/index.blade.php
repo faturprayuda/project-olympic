@@ -17,16 +17,12 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($peringkat_sekolah as $item)
+      @foreach ($peringkat_sekolah as $key => $value)
       <th scope="row">{{$loop->iteration}}</th>
-      <td class="text-center">{{$item->nama_sekolah}}</td>
-      <td class="text-center">{{$item->total_emas}}</td>
-      @foreach($peringkat_sekolah_perak as $key => $value)
-      <td class="text-center">{{$value->total_perak}}</td>
-      @endforeach
-      @foreach($peringkat_sekolah_perunggu as $key => $value)
-      <td class="text-center">{{$value->total_perunggu}}</td>
-      @endforeach
+      <td class="text-center">{{$value->nama_sekolah}}</td>
+      <td class="text-center">{{$value->medal_emas}}</td>
+      <td class="text-center">{{$value->medal_perak}}</td>
+      <td class="text-center">{{$value->medal_perunggu}}</td>
       </tr>
       @endforeach
     </tbody>
