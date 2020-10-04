@@ -30,6 +30,8 @@
 </div>
 
 {{-- table peserrta --}}
+@if($tanggal == null)
+@else
 <div class="mt-5 ml-3 mr-3">
   <h3 class="text-center" style="text-transform: uppercase">Peringkat Peserta</h3>
   <div class="glide">
@@ -113,6 +115,8 @@
     </div>
   </div>
 </div>
+@endif
+
 
 @endsection
 
