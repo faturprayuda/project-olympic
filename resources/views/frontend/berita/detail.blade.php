@@ -37,10 +37,12 @@
 </div>
 <!-- end Post Content -->
 <!-- comment content -->
-<div id="disqus_thread"></div>
+<div class="container">
+  <div id="disqus_thread"></div>
+</div>
 @endsection
 @section('script')
-  <script>
+<script>
   /**
   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
