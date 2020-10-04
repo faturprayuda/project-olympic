@@ -6,12 +6,12 @@
   style="background-image: url({{asset('component/assets/images/corporate-clean-bg-new.jpg')}})">
   <div class="bg-black-06">
     <div class="container text-center">
-      <h1 class="font-weight-light">About Timeline</h1>
+      <h1 class="font-weight-light">Tentang Kami</h1>
       <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Beranda</a></li>
           <li class="breadcrumb-item"><a href="#">Pages</a></li>
-          <li class="breadcrumb-item active" aria-current="page">About us</li>
+          <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
         </ul>
       </nav>
     </div><!-- end container -->
@@ -21,31 +21,30 @@
 <div class="section no-padding-bottom">
   <div class="container">
     <div class="section-title text-center">
-      <h2>We Are Mono</h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
+      <h2>Trilogi Olimpiade</h2>
+      <p>Trilogi Olimpiade Merupakan Event Untuk Para Siswa SMA/SMK Yang Berminat Dalam Meningkatkan Kemampuan Dalam Bidang Teknologi Khususnya Bagian Informatika Yang Akan Dilakukan Dalam Sebuah Quiz Yang Diadakan Setelah Seminar Yang Diadakan Di Trilogi Olimpiade .</p>
     </div>
   </div>
   <div class="container-fluid">
     <div class="row gallery-wrapper spacing-10">
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/co-working-gallery-2.jpg')}}" data-gallery-title="Gallery Image 1">
-            <img src="{{asset('component/assets/images/co-working-gallery-2.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi4.JPG')}}" data-gallery-title="Gallery Image 1">
+            <img src="{{asset('component/assets/images/testi4.JPG')}}" alt="">
           </a>
         </div>
       </div>
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/co-working-gallery-4.jpg')}}" data-gallery-title="Gallery Image 2">
-            <img src="{{asset('component/assets/images/co-working-gallery-4.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi3.JPG')}}" data-gallery-title="Gallery Image 2">
+            <img src="{{asset('component/assets/images/testi3.JPG')}}" alt="">
           </a>
         </div>
       </div>
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/co-working-gallery-6.jpg')}}" data-gallery-title="Gallery Image 3">
-            <img src="{{asset('component/assets/images/co-working-gallery-6.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi1.JPG')}}" data-gallery-title="Gallery Image 3">
+            <img src="{{asset('component/assets/images/testi1.JPG')}}" alt="">
           </a>
         </div>
       </div>
@@ -61,22 +60,17 @@
       <div class="col-12 col-sm-6 col-md-3 icon-3xl">
         <i class="ti ti-email text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Email</h6>
-        <p>contact@email.com</p>
+        <p>info@trilogi.ac.id</p>
       </div>
       <div class="col-12 col-sm-6 col-md-3 icon-3xl">
         <i class="ti ti-mobile text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Phone</h6>
-        <p>+(987) 654 321 01</p>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3 icon-3xl">
-        <i class="ti ti-skype text-dark margin-bottom-20"></i>
-        <h6 class="heading-uppercase no-margin">Skype</h6>
-        <p>contact.skype</p>
+        <p>021-7980011 / 7981350</p>
       </div>
       <div class="col-12 col-sm-6 col-md-3 icon-3xl">
         <i class="ti ti-location-pin text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Address</h6>
-        <p>121 King St, Melbourne VIC 3000</p>
+        <p>Jl. Duren Tiga Timur No.30, RT.5, Kalibata, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12760</p>
       </div>
     </div><!-- end row -->
   </div><!-- end container -->

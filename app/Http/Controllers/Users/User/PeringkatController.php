@@ -7,6 +7,8 @@ use App\Model\Users\Admin\PeringkatSekolah;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use DataTables;
+
 
 class PeringkatController extends Controller
 {
@@ -28,16 +30,29 @@ class PeringkatController extends Controller
             $i++;
         }
 
-        $data['peringkat_sekolah'] = DB::table('peringkat_sekolah')
-            ->select([
-                'nama_sekolah',
-                DB::raw('SUM(medal_emas) as medal_emas'),
-                DB::raw('SUM(medal_perak) as medal_perak'),
-                DB::raw('SUM(medal_perunggu) as medal_perunggu'),
-            ])
-            ->groupBy('nama_sekolah')
-            ->get();
-
         return view('frontend.sekolah.peringkat.index', $data);
+    }
+
+    public function peringkatSekolahJson()
+    {
+        $query = DB::table('peringkat_sekolah')
+                ->select([
+                    'nama_sekolah',
+                    DB::raw('SUM(medal_emas) as medal_emas'),
+                    DB::raw('SUM(medal_perak) as medal_perak'),
+                    DB::raw('SUM(medal_perunggu) as medal_perunggu'),
+                    DB::raw('SUM(medal_emas + medal_perak + medal_perunggu) as total_medal')
+                ])
+                ->groupBy('nama_sekolah')
+                ->orderBy('medal_emas','DESC')
+                ->orderBy('medal_perak','DESC')
+                ->orderBy('medal_perunggu','DESC')
+                ->orderBy('total_medal','DESC')
+                ->get();
+
+        return DataTables::of($query)
+                          ->addIndexColumn()
+                          ->make(true);
+
     }
 }

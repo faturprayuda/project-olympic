@@ -32,8 +32,8 @@
         </div>
         <div class="blog-post-content">
           <div class="d-flex justify-content-between margin-bottom-10">
-            {{-- <div class="d-inline-flex">
-            </div> --}}
+            <!-- {{-- <div class="d-inline-flex">
+            </div> --}} -->
             <div class="d-inline-flex">
               <span class="font-small">{{$row->created_at->toFormattedDateString()}}</span>
             </div>

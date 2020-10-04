@@ -21,7 +21,7 @@
   <div class="container">
     <div class="section-title text-center">
       <h2>Tentang Event</h2>
-      <p style="text-transform: capitalize">trilogi olimpiade merupakan event untuk para siswa SMA/SMK yang berminat
+      <p style="text-transform: capitalize">Trilogi Olimpiade merupakan event untuk para siswa SMA/SMK yang berminat
         dalam meningkatkan kemampuan dalam bidang teknologi khususnya bagian informatika yang akan dilakukan dalam
         sebuah quiz yang diadakan setelah seminar yang diadakan di trilogi olimpiade .</p>
     </div>
@@ -55,85 +55,37 @@
 <!-- end About section -->
 
 <!-- Event Schedule section -->
-{{-- <div class="section">
-  <div class="container">
-    <div class="timeline-wrapper">
-      <!-- Timeline box 1 -->
-      <div class="timeline">
-        <div class="timeline-date">
-          <h6 class="heading-uppercase">8:00 - 8:30</h6>
-        </div>
-        <div class="timeline-content">
-          <h6 class="font-weight-normal">Registration</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
+<div class="section">
+    <div class="container">
+    <div class="section-title text-center">
+      <h2>Berita Terbaru</h2>
+      <hr>
+      <div class="owl-carousel" data-owl-dots="false" data-owl-margin="30" data-owl-autoplay="true" data-owl-xs="1"
+      data-owl-sm="2" data-owl-md="3" data-owl-lg="4" data-owl-xl="6">
+      @foreach($list as $row)
+      <div class="client-box">
+        <a href="{{route('user.berita.show',$row->id)}}"><img src="{{url('storage/gambar-berita/'.$row->gambar)}}" alt=""></a>
+        <h5><a href="{{route('user.berita.show',$row->id)}}">{{$row->judul_berita}}</a></h5>
       </div>
-      <!-- Timeline box 1 -->
-      <div class="timeline">
-        <div class="timeline-date">
-          <h6 class="heading-uppercase">8:30 - 9:00</h6>
-        </div>
-        <div class="timeline-content">
-          <h6 class="font-weight-normal">Opening Cerenomy</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
-      </div>
-      <!-- Timeline box 1 -->
-      <div class="timeline">
-        <div class="timeline-date">
-          <h6 class="heading-uppercase">9:00 - 10:30</h6>
-        </div>
-        <div class="timeline-content">
-          <h6 class="font-weight-normal">The Evolution of Design</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
-      </div>
-      <!-- Timeline box 1 -->
-      <div class="timeline">
-        <div class="timeline-date">
-          <h6 class="heading-uppercase">10:30 - 13:00</h6>
-        </div>
-        <div class="timeline-content">
-          <h6 class="font-weight-normal">Future of Design</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
-      </div>
-      <!-- Timeline box 1 -->
-      <div class="timeline">
-        <div class="timeline-date">
-          <h6 class="heading-uppercase">13:00 - 13:20</h6>
-        </div>
-        <div class="timeline-content">
-          <h6 class="font-weight-normal">Closing Cerenomy</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
-      </div>
-    </div><!-- end timeline-wrapper -->
-  </div><!-- end container -->
-</div> --}}
+      @endforeach
+    </div>
+    </div>
+  </div>
+</div>
 <!-- end Event Schedule section -->
 
 <!-- Play video section -->
-<div class="section-lg bg-image parallax"
+<!-- <div class="section-lg bg-image parallax"
   style="background-image: url({{asset('component/assets/images/event-parallax.jpg')}})">
-  <div class="bg-black-06">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <h1 class="font-weight-thin">Youtube &amp; Vimeo Lightbox Video Player</h1>
-          <a class="button-circle button-circle-xl button-circle-outline-white-2 margin-top-20 popup-youtube"
-            data-youtube-src="https://www.youtube.com/embed/1aux_hLPf4c?autoplay=1&rel=0" href="#"><i
-              class="fa fa-play"></i></a>
-        </div>
-      </div><!-- end row -->
-    </div><!-- end container -->
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Tentang Event</h2>
+      <p style="text-transform: capitalize">Trilogi Olimpiade merupakan event untuk para siswa SMA/SMK yang berminat
+        dalam meningkatkan kemampuan dalam bidang teknologi khususnya bagian informatika yang akan dilakukan dalam
+        sebuah quiz yang diadakan setelah seminar yang diadakan di trilogi olimpiade .</p>
+    </div>
   </div>
-</div>
+</div> -->
 <!-- end Play video section -->
 
 <!-- Team section -->

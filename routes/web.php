@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-})->name('index.home');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index.home');
+
+Route::get('/', 'IndexController@index')->name('index.home');
 
 
 Route::resource('/berita','frontend\BeritaController')->only(['index','show'])->names('user.berita')->parameters('id');
@@ -33,6 +35,7 @@ Route::group(['prefix' => 'sekolah'], function () {
     Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
 
     Route::get('/peringkat', 'Users\User\PeringkatController@index')->name('user.peringkat.sekolah.index');
+    Route::get('/peringkat-json','Users\User\PeringkatController@peringkatSekolahJson')->name('user.peringkat.sekolah.json');
 });
 
 Route::get('/about', function () {
