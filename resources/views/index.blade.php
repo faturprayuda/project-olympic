@@ -2,11 +2,14 @@
 @section('main-content')
 <!-- Home section -->
 <div class="section-fullscreen bg-image parallax"
-  style="background-image: url({{asset('component/assets/images/event-bg.jpg')}})">
+  style="background-image: url({{asset('component/assets/images/283.jpg')}})">
   <div class="bg-black-06">
     <div class="container text-center">
       <div class="position-middle">
-        <h1 class="display-4 font-weight-bold">Design Conference 2018</h1>
+        <h1 class="display-4 font-weight-bold text-center"
+          style="text-align: justify; word-wrap: break-word; width: 550px;">Selamat
+          Datang di Trilogi
+          Olimpiade</h1>
       </div>
     </div><!-- end container -->
   </div>
@@ -17,31 +20,32 @@
 <div id="about" class="section no-padding-bottom">
   <div class="container">
     <div class="section-title text-center">
-      <h2>What's About Event</h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis natoque penatibus et
-        magnis dis parturient montes, nascetur ridiculus mus.</p>
+      <h2>Tentang Event</h2>
+      <p style="text-transform: capitalize">trilogi olimpiade merupakan event untuk para siswa SMA/SMK yang berminat
+        dalam meningkatkan kemampuan dalam bidang teknologi khususnya bagian informatika yang akan dilakukan dalam
+        sebuah quiz yang diadakan setelah seminar yang diadakan di trilogi olimpiade .</p>
     </div>
   </div>
   <div class="container-fluid">
     <div class="row gallery-wrapper spacing-10">
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/event-gallery-1.jpg')}}" data-gallery-title="Gallery Image 1">
-            <img src="{{asset('component/assets/images/event-gallery-1.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi4.JPG')}}" data-gallery-title="Gallery Image 1">
+            <img src="{{asset('component/assets/images/testi4.JPG')}}" alt="">
           </a>
         </div>
       </div>
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/event-gallery-2.jpg')}}" data-gallery-title="Gallery Image 2">
-            <img src="{{asset('component/assets/images/event-gallery-2.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi3.JPG')}}" data-gallery-title="Gallery Image 2">
+            <img src="{{asset('component/assets/images/testi3.JPG')}}" alt="">
           </a>
         </div>
       </div>
       <div class="col-12 col-md-4 gallery-box">
         <div class="gallery-img">
-          <a href="{{asset('component/assets/images/event-gallery-3.jpg')}}" data-gallery-title="Gallery Image 3">
-            <img src="{{asset('component/assets/images/event-gallery-3.jpg')}}" alt="">
+          <a href="{{asset('component/assets/images/testi1.JPG')}}" data-gallery-title="Gallery Image 3">
+            <img src="{{asset('component/assets/images/testi1.JPG')}}" alt="">
           </a>
         </div>
       </div>
@@ -51,7 +55,7 @@
 <!-- end About section -->
 
 <!-- Event Schedule section -->
-<div class="section">
+{{-- <div class="section">
   <div class="container">
     <div class="timeline-wrapper">
       <!-- Timeline box 1 -->
@@ -111,7 +115,7 @@
       </div>
     </div><!-- end timeline-wrapper -->
   </div><!-- end container -->
-</div>
+</div> --}}
 <!-- end Event Schedule section -->
 
 <!-- Play video section -->
