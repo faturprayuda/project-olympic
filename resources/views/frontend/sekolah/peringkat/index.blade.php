@@ -4,7 +4,8 @@
 <div class="table-responsive">
   <div class="container mt-12 mb-12">
     <h3 class="text-center" style="text-transform: uppercase">Peringkat Sekolah</h3>
-    <table class="table table-striped table-bordered dt-responsive nowrap" id="peringkat_sekolah" style="width:100% !important">
+    <table class="table table-striped table-bordered dt-responsive nowrap" id="peringkat_sekolah"
+      style="width:100% !important">
       <thead class="thead-dark">
         <tr>
           <th>#</th>
