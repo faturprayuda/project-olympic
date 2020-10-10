@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'IndexController@index')->name('index.home');
 
 
-Route::resource('/berita','frontend\BeritaController')->only(['index','show'])->names('user.berita')->parameters('id');
-Route::resource('/pengumuman','frontend\PengumumanController')->only(['index','show'])->names('user.pengumuman')->parameters('id');
+Route::resource('/berita', 'frontend\BeritaController')->only(['index', 'show'])->names('user.berita')->parameters('id');
+Route::resource('/pengumuman', 'frontend\PengumumanController')->only(['index', 'show'])->names('user.pengumuman')->parameters('id');
 
 // Route::get('/pengumuman', function () {
 //     return view('frontend.pengumuman.index');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'sekolah'], function () {
     Route::resource('/daftar', 'frontend\DaftarSekolahController')->only('index')->names('user.daftar.sekolah');
 
     Route::get('/peringkat', 'Users\User\PeringkatController@index')->name('user.peringkat.sekolah.index');
-    Route::get('/peringkat-json','Users\User\PeringkatController@peringkatSekolahJson')->name('user.peringkat.sekolah.json');
+    Route::get('/peringkat-json', 'Users\User\PeringkatController@peringkatSekolahJson')->name('user.peringkat.sekolah.json');
 });
 
 Route::get('/about', function () {
@@ -49,13 +49,13 @@ Route::get('/admin/index', function () {
 })->name('admin.index')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->only(['index','store','destroy'])->names('daftar.sekolah')->parameters('id')->middleware('auth');
+    Route::resource('/kelola/daftar/sekolah', 'DaftarSekolahController')->only(['index', 'store', 'destroy'])->names('daftar.sekolah')->parameters('id')->middleware('auth');
     Route::put('/kelola/daftar/sekolah/update', 'DaftarSekolahController@update')->name('daftar.sekolah.ubah')->middleware('auth');
-    Route::resource('/kelola/berita', 'BeritaController')->names('berita')->only(['index','destroy','store'])->parameters('id')->middleware('auth');
+    Route::resource('/kelola/berita', 'BeritaController')->names('berita')->only(['index', 'destroy', 'store'])->parameters('id')->middleware('auth');
     Route::post('/kelola/berita/update', 'BeritaController@update')->name('berita.ubah')->middleware('auth');
-    Route::resource('/kelola/pengumuman','PengumumanController')->names('pengumuman')->only(['index','destroy','store'])->parameters('id')->middleware('auth');
+    Route::resource('/kelola/pengumuman', 'PengumumanController')->names('pengumuman')->only(['index', 'destroy', 'store'])->parameters('id')->middleware('auth');
     Route::post('/kelola/pengumuman/update', 'PengumumanController@update')->name('pengumuman.ubah')->middleware('auth');
-    Route::resource('/kelola/peserta','DaftarPesertaController')->names('peserta')->only(['index','destroy'])->parameters('id')->middleware('auth');
+    Route::resource('/kelola/peserta', 'DaftarPesertaController')->names('peserta')->only(['index', 'destroy'])->parameters('id')->middleware('auth');
     Route::get('/kelola/peringkat/sekolah', function () {
         return view('backend.users.admin.sekolah.peringkat.index');
     })->name('peringkat.index')->middleware('auth');
@@ -71,3 +71,12 @@ Route::post('/forget-password', 'Auth\ForgetPasswordController@resetPass')->name
 Route::post('/signout', 'Auth\LoginController@logout')->name('signout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+// route storage:link
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
