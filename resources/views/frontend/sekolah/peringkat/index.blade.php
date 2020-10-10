@@ -133,6 +133,7 @@
     processing: false,
     serverSide: true,
     bInfo:false,
+    searching: false,
     // orderable:false,
     ajax:"{{route('user.peringkat.sekolah.json')}}",
     columns: [

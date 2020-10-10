@@ -231,9 +231,9 @@
     <div class="owl-carousel" data-owl-dots="false" data-owl-margin="30" data-owl-autoplay="true" data-owl-xs="1"
       data-owl-sm="2" data-owl-md="3" data-owl-lg="4" data-owl-xl="6">
       <div class="client-box">
-        <a href="#"><img src="{{asset('component/assets/images/client-1-white.png')}}" alt=""></a>
+        <a href="#"><img src="{{asset('component/assets/images/download.png')}}" alt=""></a>
       </div>
-      <div class="client-box">
+      <!-- <div class="client-box">
         <a href="#"><img src="{{asset('component/assets/images/client-2-white.png')}}" alt=""></a>
       </div>
       <div class="client-box">
@@ -249,7 +249,7 @@
         <a href="#"><img src="{{asset('component/assets/images/client-6-white.png')}}" alt=""></a>
       </div>
       <div class="client-box">
-        <a href="#"><img src="{{asset('component/assets/images/client-7-white.png')}}" alt=""></a>
+        <a href="#"><img src="{{asset('component/assets/images/client-7-white.png')}}" alt=""></a> -->
       </div>
     </div><!-- end owl-carousel -->
   </div><!-- end container -->
