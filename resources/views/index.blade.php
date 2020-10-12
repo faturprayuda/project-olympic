@@ -21,9 +21,7 @@
   <div class="container">
     <div class="section-title text-center">
       <h2>Tentang Event</h2>
-      <p style="text-transform: capitalize">Trilogi Olimpiade merupakan event untuk para siswa SMA/SMK yang berminat
-        dalam meningkatkan kemampuan dalam bidang teknologi khususnya bagian informatika yang akan dilakukan dalam
-        sebuah quiz yang diadakan setelah seminar yang diadakan di trilogi olimpiade .</p>
+      <p style="text-transform: capitalize">Trilogi Olimpiade merupakan acara yang diadakan oleh teknik informatika universitas trilogi yang bekerja sama dengan bisa.ai. acara ini ditunjukan untuk pelajar sma/smk yang memiliki ketertarikan dalam bidang teknolgi, khususnya informatika. rangkaian acara terdiri dari seminar teknologi seminggu sekali selama 5 minggu, setiap minggunya diadakan juga quiz yang hasilnya akan di akumulasi untuk pembagian hadiah pada akhir acara</p>
     </div>
   </div>
   <div class="container-fluid">
