@@ -15,6 +15,7 @@
               style="width: 25px; height:25px;"></th>
           <th class="text-center"><img src="{{asset('storage/img/assets/bronze-medal.png')}}" alt="medal"
               style="width: 25px; height:25px;"></th>
+          <th class="text-center">Total Poin</th>
         </tr>
       </thead>
     </table>
@@ -142,7 +143,8 @@
       { data: 'nama_sekolah', name: 'nama_sekolah', className: 'text-center'},
       { data: 'medal_emas', name: 'medal_emas', className: 'text-center'},
       { data: 'medal_perak', name: 'medal_perak', className: 'text-center'},
-      { data: 'medal_perunggu', name: 'medal_perunggu', className: 'text-center'}
+      { data: 'medal_perunggu', name: 'medal_perunggu', className: 'text-center'},
+      { data: 'total_poin', name: 'total_poin', className: 'text-center'}
     ]
   });
 </script>

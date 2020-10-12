@@ -52,6 +52,15 @@ class PeringkatController extends Controller
 
         return DataTables::of($query)
                           ->addIndexColumn()
+                          ->addColumn('total_poin', function($row){
+                            $pointEmas = $row->medal_emas * 5;
+                            $pointPerak = $row->medal_perak * 3;
+                            $pointPerunggu = $row->medal_perunggu * 1;
+
+                            $totalPoint = $pointEmas + $pointPerak + $pointPerunggu;
+
+                            return $totalPoint;
+                          })
                           ->make(true);
 
     }
