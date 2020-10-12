@@ -21,8 +21,14 @@
 <div class="section no-padding-bottom">
   <div class="container">
     <div class="section-title text-center">
-      <h2>Trilogi Olimpiade</h2>
-      <p>Trilogi Olimpiade Merupakan Event Untuk Para Siswa SMA/SMK Yang Berminat Dalam Meningkatkan Kemampuan Dalam Bidang Teknologi Khususnya Bagian Informatika Yang Akan Dilakukan Dalam Sebuah Quiz Yang Diadakan Setelah Seminar Yang Diadakan Di Trilogi Olimpiade .</p>
+      <h2>Tech Dev OlimTIK</h2>
+      <p>Tech Dev OlimTIK merupakan kompetisi tingkat wilayah Jabodetabek yang diselenggarakan oleh Program Studi Teknik
+        Informatika Universitas Trilogi bekerjasama dengan Bisa.AI Academy. Kompetisi ini sebagai sarana untuk
+        menyalurkan pengetahuan dan kreatifitas siswa/siswi SMA/SMK/MA/Sederajat dalam bidang Artificial Intelligence,
+        Augmented Reality, UI/UX, Internet of Things dan IT Security yang merupakan beberapa diantara teknologi penopang
+        dan entertain di era revolusi industri 4.0. Melalui kompetisi ini diharapkan mampu meningkatkan pengetahuan
+        siswa/siswi dalam teknologi ITsehingga bisa memberi kesiapan dan meningkatkan daya saing masyarakat Indonesia
+        dalam menghadapi revolusi industri 4.0.</p>
     </div>
   </div>
   <div class="container-fluid">
@@ -57,20 +63,21 @@
 <div class="section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-3 icon-3xl">
+      <div class="col-12 col-sm-6 col-md-4 icon-3xl">
         <i class="ti ti-email text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Email</h6>
         <p>info@trilogi.ac.id</p>
       </div>
-      <div class="col-12 col-sm-6 col-md-3 icon-3xl">
+      <div class="col-12 col-sm-6 col-md-4 icon-3xl">
         <i class="ti ti-mobile text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Phone</h6>
         <p>021-7980011 / 7981350</p>
       </div>
-      <div class="col-12 col-sm-6 col-md-3 icon-3xl">
+      <div class="col-12 col-sm-6 col-md-4 icon-3xl">
         <i class="ti ti-location-pin text-dark margin-bottom-20"></i>
         <h6 class="heading-uppercase no-margin">Address</h6>
-        <p>Jl. Duren Tiga Timur No.30, RT.5, Kalibata, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12760</p>
+        <p>Jl. Duren Tiga Timur No.30, RT.5, Kalibata, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota
+          Jakarta 12760</p>
       </div>
     </div><!-- end row -->
   </div><!-- end container -->
@@ -92,7 +99,7 @@
         </div>
         <input type="text" id="subject" name="subject" placeholder="Subject" required>
         <textarea name="message" id="message" placeholder="Message"></textarea>
-        <button class="button button-lg button-outline-dark-2" type="submit">Send Message</button>
+        <button type="button" class="button button-lg button-outline-dark-2" id="button-submit">Send Message</button>
       </form>
       <!-- Submit result -->
       <div class="submit-result">
@@ -103,4 +110,12 @@
   </div><!-- end container -->
 </div>
 <!-- end Contact Form section -->
+@endsection
+
+@section('script')
+<script>
+  $('document').ready(function() {
+      alert('test');
+    })
+</script>
 @endsection

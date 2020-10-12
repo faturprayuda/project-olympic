@@ -8,8 +8,7 @@
       <div class="position-middle">
         <h1 class="display-4 font-weight-bold text-center"
           style="text-align: justify; word-wrap: break-word; width: 550px;">Selamat
-          Datang di Trilogi
-          Olimpiade</h1>
+          Datang di Tech Dev OlimTIK</h1>
       </div>
     </div><!-- end container -->
   </div>
@@ -21,7 +20,13 @@
   <div class="container">
     <div class="section-title text-center">
       <h2>Tentang Event</h2>
-      <p style="text-transform: capitalize">Trilogi Olimpiade merupakan acara yang diadakan oleh teknik informatika universitas trilogi yang bekerja sama dengan bisa.ai. acara ini ditunjukan untuk pelajar sma/smk yang memiliki ketertarikan dalam bidang teknolgi, khususnya informatika. rangkaian acara terdiri dari seminar teknologi seminggu sekali selama 5 minggu, setiap minggunya diadakan juga quiz yang hasilnya akan di akumulasi untuk pembagian hadiah pada akhir acara</p>
+      <p style="text-transform: capitalize">Tech Dev OlimTIK merupakan kompetisi tingkat wilayah Jabodetabek yang
+        diselenggarakan oleh Program Studi Teknik Informatika Universitas Trilogi bekerjasama dengan Bisa.AI Academy.
+        Kompetisi ini sebagai sarana untuk menyalurkan pengetahuan dan kreatifitas siswa/siswi SMA/SMK/MA/Sederajat
+        dalam bidang Artificial Intelligence, Augmented Reality, UI/UX, Internet of Things dan IT Security yang
+        merupakan beberapa diantara teknologi penopang dan entertain di era revolusi industri 4.0. Melalui kompetisi ini
+        diharapkan mampu meningkatkan pengetahuan siswa/siswi dalam teknologi ITsehingga bisa memberi kesiapan dan
+        meningkatkan daya saing masyarakat Indonesia dalam menghadapi revolusi industri 4.0.</p>
     </div>
   </div>
   <div class="container-fluid">
@@ -54,19 +59,20 @@
 
 <!-- Event Schedule section -->
 <div class="section">
-    <div class="container">
+  <div class="container">
     <div class="section-title text-center">
       <h2>Berita Terbaru</h2>
       <hr>
       <div class="owl-carousel" data-owl-dots="false" data-owl-margin="30" data-owl-autoplay="true" data-owl-xs="1"
-      data-owl-sm="2" data-owl-md="3" data-owl-lg="4" data-owl-xl="6">
-      @foreach($list as $row)
-      <div class="client-box">
-        <a href="{{route('user.berita.show',$row->id)}}"><img src="{{url('storage/gambar-berita/'.$row->gambar)}}" alt=""></a>
-        <h5><a href="{{route('user.berita.show',$row->id)}}">{{$row->judul_berita}}</a></h5>
+        data-owl-sm="2" data-owl-md="3" data-owl-lg="4" data-owl-xl="6">
+        @foreach($list as $row)
+        <div class="client-box">
+          <a href="{{route('user.berita.show',$row->id)}}"><img src="{{url('storage/gambar-berita/'.$row->gambar)}}"
+              alt=""></a>
+          <h5><a href="{{route('user.berita.show',$row->id)}}">{{$row->judul_berita}}</a></h5>
+        </div>
+        @endforeach
       </div>
-      @endforeach
-    </div>
     </div>
   </div>
 </div>
@@ -248,9 +254,9 @@
       </div>
       <div class="client-box">
         <a href="#"><img src="{{asset('component/assets/images/client-7-white.png')}}" alt=""></a> -->
-      </div>
-    </div><!-- end owl-carousel -->
-  </div><!-- end container -->
+    </div>
+  </div><!-- end owl-carousel -->
+</div><!-- end container -->
 </div>
 <!-- end Clients section -->
 
@@ -264,7 +270,7 @@
   </div>
   <style>
     iframe#gmap_canvas {
-      width: 1500px;
+      width: 2000px;
       height: 500px;
     }
 
@@ -272,14 +278,14 @@
       position: relative;
       text-align: right;
       height: 500px;
-      width: 1500px;
+      width: 2000px;
     }
 
     .gmap_canvas {
       overflow: hidden;
       background: none !important;
       height: 500px;
-      width: 1500px;
+      width: 2000px;
     }
 
     @media(max-width: 800px) {
