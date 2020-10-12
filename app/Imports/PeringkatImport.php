@@ -16,15 +16,16 @@ class PeringkatImport implements ToModel
     public function model(array $row)
     {
         // dd($row);
-        $sisa_waktu = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($row[4]);
+        $sisa_waktu = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($row[5]);
         // $waktu = gmdate("H:i:s", $sisa_waktu);
 
-        $tanggal = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[5]);
+        $tanggal = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[6]);
 
         $data = [
             'nama_peserta'  => $row[1],
-            'nama_sekolah'  => $row[2],
-            'nilai'         => $row[3],
+            'email'         => $row[2],
+            'nama_sekolah'  => $row[3],
+            'nilai'         => $row[4],
             'sisa_waktu'    => $sisa_waktu,
             'tanggal'       => Carbon::today('Asia/Jakarta'),
         ];

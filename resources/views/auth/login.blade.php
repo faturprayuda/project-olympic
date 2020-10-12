@@ -33,7 +33,6 @@
                         <div class="margin-top-30">
                             <ul class="list-unstyled">
                                 <li><a href="{{route('forgot.pass')}}">Forgot password?</a></li>
-                                <li><a href="{{route('register')}}">Create account</a></li>
                             </ul>
                         </div>
                     </div>
